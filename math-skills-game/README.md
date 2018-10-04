@@ -1,5 +1,7 @@
 Math Skills Game
 
+You can play the game here: https://obiewalker.github.io/math-skills-game/
+
 A kid's game that tests reaction, wit and calculation. It is derived from Samer Buna's course with a few changes made as I deemed fit.
 
 ## For installation
