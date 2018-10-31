@@ -1,0 +1,40 @@
+{
+  "name": "math-skills-game",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://obiewalker.github.io/math-skills-game",
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "gh-pages": "^2.0.0",
+    "jest": "^23.6.0",
+    "lodash": "^4.17.11",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "1.1.5",
+    "regenerator-runtime": "^0.12.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "BABEL_ENV=test jest --config ./jest.config.json",
+    "test:dev": "jest --watchAll",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
+    ]
+  }
+}
