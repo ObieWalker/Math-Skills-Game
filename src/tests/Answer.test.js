@@ -26,9 +26,11 @@ describe('Answers Component', () => {
     wrapper = getComponent();
     expect(wrapper).toMatchSnapshot();
   });
-  it('renders component successfully', () => {
+  it('should click on numbers button', () => {
     wrapper = getComponent();
-    expect(wrapper.find('div').length).toBe(1);
-    expect(wrapper.find('span').length).toBe(2);
+    wrapper
+    .find('.btn')
+    .at(0)
+    .simulate('click');
   });
 });

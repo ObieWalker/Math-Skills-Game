@@ -5,8 +5,21 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Numbers
     selectNumber={[MockFunction]}
-    selectedNumbers={Array []}
-    usedNumbers={Array []}
+    selectedNumbers={
+      Array [
+        1,
+        2,
+        3,
+        4,
+      ]
+    }
+    usedNumbers={
+      Array [
+        1,
+        2,
+        3,
+      ]
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,21 +36,25 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <span
+          className="used"
           onClick={[Function]}
         >
           1
         </span>,
         <span
+          className="used"
           onClick={[Function]}
         >
           2
         </span>,
         <span
+          className="used"
           onClick={[Function]}
         >
           3
         </span>,
         <span
+          className="selected"
           onClick={[Function]}
         >
           4
@@ -78,7 +95,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 1,
-          "className": undefined,
+          "className": "used",
           "onClick": [Function],
         },
         "ref": null,
@@ -91,7 +108,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 2,
-          "className": undefined,
+          "className": "used",
           "onClick": [Function],
         },
         "ref": null,
@@ -104,7 +121,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 3,
-          "className": undefined,
+          "className": "used",
           "onClick": [Function],
         },
         "ref": null,
@@ -117,7 +134,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": undefined,
+          "className": "selected",
           "onClick": [Function],
         },
         "ref": null,
@@ -200,21 +217,25 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <span
+            className="used"
             onClick={[Function]}
           >
             1
           </span>,
           <span
+            className="used"
             onClick={[Function]}
           >
             2
           </span>,
           <span
+            className="used"
             onClick={[Function]}
           >
             3
           </span>,
           <span
+            className="selected"
             onClick={[Function]}
           >
             4
@@ -255,7 +276,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 1,
-            "className": undefined,
+            "className": "used",
             "onClick": [Function],
           },
           "ref": null,
@@ -268,7 +289,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 2,
-            "className": undefined,
+            "className": "used",
             "onClick": [Function],
           },
           "ref": null,
@@ -281,7 +302,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 3,
-            "className": undefined,
+            "className": "used",
             "onClick": [Function],
           },
           "ref": null,
@@ -294,7 +315,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": 4,
-            "className": undefined,
+            "className": "selected",
             "onClick": [Function],
           },
           "ref": null,
