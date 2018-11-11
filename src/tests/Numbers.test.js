@@ -1,16 +1,21 @@
 import React from 'react';
 import expect from 'expect';
 import { shallow } from 'enzyme';
-import Numbers from '../../src/components/Numbers';
+import _ from 'lodash';
+import NumbersComponent from '../../src/components/Numbers';
 
 let mountedForm, props, wrapper;
 let NumbersList = {
-  list : []
+  list : [1,2,3]
+}
+let Numbers = {
+  list : [1,2,3,4,5,6,7,8,9]
 }
 const selectNumber = jest.fn();
-const selectedNumbers = [];
+const selectedNumbers = [1,2,3,4];
 const numberClassName = jest.fn();
-const usedNumbers = [];
+const usedNumbers = [1,2,3];
+
 const getComponent = () => {
   if (!mountedForm) {
     props = {
@@ -18,7 +23,7 @@ const getComponent = () => {
       usedNumbers,
       selectedNumbers
     };
-    mountedForm = shallow(<Numbers {...props} />);
+    mountedForm = shallow(<NumbersComponent {...props} />);
   }
   return mountedForm;
 };
@@ -30,9 +35,15 @@ describe('Numbers Component', () => {
     wrapper = getComponent();
     expect(wrapper).toMatchSnapshot();
   });
-  it('renders component successfully', () => {
+  it('testing numberClassName function', () => {
     wrapper = getComponent();
-    expect(wrapper.find('div').length).toBe(1);
-
+    wrapper.props().numberClassName;
+  });
+  it('should click on numbers button', () => {
+    wrapper = getComponent();
+    wrapper
+    .find('.used')
+    .at(0)
+    .simulate('click');
   });
 });

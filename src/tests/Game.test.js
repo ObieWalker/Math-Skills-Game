@@ -80,6 +80,12 @@ describe('Game Component', () => {
     expect(wrapper.state().answerIsCorrect).toEqual(null);
     expect(wrapper.state().selectedNumbers).toEqual([undefined]);
   });
+  it('testing selectNumber function', () => {
+    wrapper = getComponent();
+    wrapper.instance().selectNumber();
+    expect(wrapper.state().answerIsCorrect).toEqual(null);
+    expect(wrapper.state().selectedNumbers).toEqual([undefined]);
+  });
   it('testing unselectNumber function', () => {
     wrapper = getComponent();
     wrapper.instance().unselectNumber();
@@ -104,6 +110,22 @@ describe('Game Component', () => {
     expect(wrapper.state().selectedNumbers).toEqual([]);
     expect(wrapper.state().answerIsCorrect).toEqual(null);
   });
+  it('testing updateDoneStatus function', () => {
+    wrapper = getComponent();
+    wrapper.instance().updateDoneStatus();
+    expect(wrapper.state().doneStatus).toEqual(null);
+  });
+  it('testing redraw function', () => {
+    wrapper = getComponent();
+
+    wrapper.instance().redraw();
+    wrapper.instance().redraw();
+    wrapper.instance().redraw();
+    wrapper.instance().redraw();
+    wrapper.instance().redraw();
+    expect(wrapper.state().selectedNumbers).toEqual([]);
+    expect(wrapper.state().answerIsCorrect).toEqual(null);
+  });
   it('testing possibleSolutions function', () => {
     wrapper = getComponent();
     let params = {
@@ -121,10 +143,34 @@ describe('Game Component', () => {
     expect(wrapper.state().selectedNumbers).toEqual([]);
     expect(wrapper.state().answerIsCorrect).toEqual(null);
   });
+  it('testing possibleCombinationSum function', () => {
+    wrapper = getComponent();
+    let arr = [4,5,6]
+    let n = 2;
+    wrapper.instance().possibleCombinationSum(arr, n);
+    expect(wrapper.state().selectedNumbers).toEqual([]);
+    expect(wrapper.state().answerIsCorrect).toEqual(null);
+  });
+  it('testing possibleCombinationSum function', () => {
+    wrapper = getComponent();
+    let arr = [4,5,6,7,8]
+    let n = 12;
+    wrapper.instance().possibleCombinationSum(arr, n);
+    expect(wrapper.state().selectedNumbers).toEqual([]);
+    expect(wrapper.state().answerIsCorrect).toEqual(null);
+  });
+  it('testing possibleCombinationSum function', () => {
+    wrapper = getComponent();
+    let arr = [4,5,6,7,13]
+    let n = 12;
+    wrapper.instance().possibleCombinationSum(arr, n);
+    expect(wrapper.state().selectedNumbers).toEqual([]);
+    expect(wrapper.state().answerIsCorrect).toEqual(null);
+  });
   it('testing updateDoneStatus function', () => {
     wrapper = getComponent();
     wrapper.instance().updateDoneStatus();
-    expect(wrapper.state().doneStatus).toEqual(null);
+    expect(wrapper.state().doneStatus).toEqual("Game Over!!");
   });
   it('testing resetGame function', () => {
     wrapper = getComponent();

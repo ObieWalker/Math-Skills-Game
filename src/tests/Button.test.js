@@ -11,7 +11,7 @@ const checkAnswer = jest.fn();
 const acceptAnswer = jest.fn();
 const redraw = jest.fn();
 const redraws = true;
-const answerIsCorrect = true;
+let answerIsCorrect = true;
 const selectedNumbers = []
 
 
@@ -33,13 +33,18 @@ const getComponent = () => {
 describe('Button Component', () => {
   beforeEach(() => {});
 
-  it('renders component successfully', () => {
-    wrapper = getComponent();
-    expect(wrapper).toMatchSnapshot();
-  });
+
   it('renders component successfully', () => {
     wrapper = getComponent();
     expect(wrapper.find('div').length).toBe(1);
+    expect(wrapper.find('br').length).toBe(2);
+    expect(wrapper.find('button').length).toBe(2);
+  });
+  it('renders component successfully', () => {
+    wrapper = getComponent();
+    wrapper.setProps({ answerIsCorrect: false });
+    expect(wrapper.find('div').length).toBe(1);
+    expect(wrapper.find('br').length).toBe(2);
     expect(wrapper.find('button').length).toBe(2);
   });
 });
